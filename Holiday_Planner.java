@@ -26,10 +26,7 @@ class Travel_Company{   //Binary search Tree
 	
 	void searchByDays(int searchDays) { 
 		Scanner sc = new Scanner(System.in);
-		//To search based on number of days
-			Tour_Package node = new Tour_Package();
-			System.out.print("● ENTER NUMBER OF DAYS: ");
-			node.days = sc.nextInt();
+		//To search based on number of day
 			if (ptr == null) {
 				System.out.println("Package you are looking for is not available.......\nPlease try out other package!");
 			}
@@ -44,7 +41,6 @@ class Travel_Company{   //Binary search Tree
 					ptr = ptr.high;
 
 			}
-			display();
 				
 			
 		}
