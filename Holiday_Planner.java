@@ -92,9 +92,13 @@ class Travel_Company{   //Binary search Tree
 		}
 		
 	
-	void display() { // To display contents of one tourpackage
-		
-	}
+	 void display(Tour_Package temp) { // To display contents of one tourpackage
+        	System.out.println("-----Package Details-----");
+        	System.out.println("Package name:"+temp.Destinations);
+        	System.out.println("price"+temp.price);
+        	System.out.println("Number of days:"+temp.days);
+        	System.out.println("--------------------------");
+    }
 }
 public class Holiday_Planner {
 
