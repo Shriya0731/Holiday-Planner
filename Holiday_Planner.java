@@ -4,14 +4,14 @@ import java.util.*;
 
 class Tour_Package{
 	int price;
+	String Package_name;
 	String [] Destinations;
 	int days, capacity;
 	Tour_Package low , high;
 	
 }
 class Travel_Company{   //Binary search Tree
-	Tour_Package root,ptr;
-	
+	Tour_Package root,ptr,root1; //root1 for bst based on number of days and root for bst based on price
 	int bydays,byprice;  // 
 	void create_price() {
 		
@@ -76,7 +76,28 @@ class Travel_Company{   //Binary search Tree
 			
 		}
 		
-	
+	 boolean is_destination(Tour_Package current,  String location) {
+	   int i =0;
+	   for (i=0;i<current.Destinations.length;i++) {
+		   if (current.Destinations[i].equals(location))
+			   return true;
+			   
+	   }
+	   return false;
+           } 
+   
+        void searchByplace(Tour_Package curr, String desire_loc) {
+		if(curr.low!=null) {
+			searchByplace(curr.low,desire_loc);
+		}
+		if (is_destination(curr,desire_loc )) {
+			display(curr);
+		}
+		
+		if(curr.high!=null) {
+			searchByplace(curr.high,desire_loc);
+		}
+   }
 	void display() { // To display contents of one tourpackage
 		
 	}
