@@ -13,8 +13,34 @@ class Tour_Package{
 class Travel_Company{   //Binary search Tree
 	Tour_Package root,ptr,root1; //root1 for bst based on number of days and root for bst based on price
 	int bydays,byprice;  // 
-	void create_price() {
-		
+	
+	void create_price(Tour_Package new_tour) {
+        	if(root==null){
+           	 root=new_tour;
+       		}else{
+            		Tour_Package ptr=root;
+            		while(ptr!=null){
+                	if (ptr.price>new_tour.price){
+                    		if (ptr.low==null){
+                        		ptr.low=new_tour;
+                        		break;
+                    		}
+				else{
+                       		 ptr=ptr.low;
+                   	 	}
+                	}
+			else{
+                    		if (ptr.high == null) {
+                        		ptr.high = new_tour;
+                        		break;
+                   		} else {
+                        		ptr = ptr.high;
+                    			}
+               		}
+               		}
+       		}
+
+    }
 	}
 	void create_days(Tour_Package new_tour) {
 		if (root1==null) {
