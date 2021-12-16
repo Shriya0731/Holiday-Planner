@@ -45,9 +45,29 @@ class Travel_Company{   //Binary search Tree
 	void create_days() {
 		
 	}
+
 	void searchByPrice(int searchPrice) {
-		
-	}
+        Scanner sc = new Scanner(System.in);
+        //To search based on Price
+        ptr = root;
+        if (ptr == null) {
+            System.out.println("Package you are looking for is not available.......\nPlease try out other package!");
+        }
+
+        while (ptr != null) {
+            if (ptr.price == 0) {
+                System.out.println("Package Not Available For This Input........ ");
+
+            } else if (searchPrice < ptr.price) {
+                ptr = ptr.low;
+            } else if (searchPrice == ptr.price) {
+                display(ptr);
+                break;
+            } else
+                ptr = ptr.high;
+
+        }
+    }
 	
 	
 	void searchByDays(int searchDays) { 
