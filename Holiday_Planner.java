@@ -88,26 +88,33 @@ class Travel_Company{   //Binary search Tree
     }
 	
 	
-	void searchByDays(int searchDays) { 
+	void searchByPrice(int searchPrice) { 
 		Scanner sc = new Scanner(System.in);
 		//To search based on number of day
+		
+		ptr = root;
 			if (ptr == null) {
 				System.out.println("Package you are looking for is not available.......\nPlease try out other package!");
 			}
-			ptr = root;
-			while (ptr != null) {
-				if (ptr.days == 0) {
-					System.out.println("Package Not Available For This Input........ ");
-					
-				} else if (searchDays<ptr.days ) {
-					ptr = ptr.low;
-				} else
-					ptr = ptr.high;
 
+			while (ptr != null) {
+				if (ptr.new_package.price == 0) {
+					System.out.println("Package Not Available For This Input........ ");
+				} else if (searchPrice<ptr.new_package.price ) {
+					display(ptr)
+					ptr = ptr.low;
+				} 
+				else if(searchPrice == ptr.new_package.price) {
+					display(ptr);
+					break;
+				}
+				else
+					ptr = ptr.high;
 			}
 				
 			
 		}
+		
 		
 	
 	 void display(Tour_Package temp) { // To display contents of one tourpackage
