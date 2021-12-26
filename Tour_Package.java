@@ -28,6 +28,7 @@ public class Tour_Package {
 				if (yes==1) {
 					bookthistour.insert(customer_name, seats);
 					this.booked_seats = booked_seats + seats;
+					System.out.println("Thank you for choosing us as your travel partner!");
 				}	
 			}
 			else {
