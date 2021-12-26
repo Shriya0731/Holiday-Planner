@@ -253,6 +253,7 @@ public class Travel_Company{
 					}
 				}
 				else {
+					i =0;
 					inorder(root1);
 					Category successor = this.inordersuccessor(ptr1);
 					Category copy = successor;
