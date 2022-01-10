@@ -1,3 +1,6 @@
+package Holiday_Planner;
+
+
 public class Bookings{
     Customer head;
     void insert(String new_cust_name, int book_seats ) {
@@ -17,12 +20,12 @@ public class Bookings{
     void display() {
         Customer current = head;
         if (head == null) {
-            System.out.println("No bookings.");
+            System.out.println("\tNo bookings.");
         }
         while(current!=null) {
-            System.out.println("\n---Customer DETAILS---");
-            System.out.println("\nName:"+current.name);
-            System.out.println("Seats booked:"+current.seats);
+            System.out.println("\n\t---Customer DETAILS---");
+            System.out.println("\n\tName:"+current.name);
+            System.out.println("\tSeats booked:"+current.seats);
 
             current =current.next;
         }

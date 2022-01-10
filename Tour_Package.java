@@ -1,3 +1,5 @@
+package Holiday_Planner;
+
 import java.util.Scanner;
 
 class Tour_Package{
@@ -38,22 +40,22 @@ class Tour_Package{
 
   }*/
         void book() {
-            System.out.println("Enter your name:");
+            System.out.print("\tEnter your name:");
             String customer_name = sc.next();
             customer_name += sc.nextLine();
-            System.out.println("Enter number of seats to book:");
+            System.out.print("\tEnter number of seats to book:");
             int seats=sc.nextInt();
             if (booked_seats + seats <= capacity) {
-                System.out.println("To confirm booking press 1");
+                System.out.print("\tTo confirm booking press 1");
                 int yes = sc.nextInt();
                 if (yes==1) {
                     bookthistour.insert(customer_name, seats);
                     this.booked_seats = booked_seats + seats;
-                    System.out.println("Thank you for choosing us as your travel partner!");
+                    System.out.println("\tThank you for choosing us as your travel partner!");
                 }
             }
             else {
-                System.out.println("Sorry seats are full!");
+                System.out.println("\tSorry seats are full!");
             }
 
         }
@@ -62,7 +64,7 @@ class Tour_Package{
                 bookthistour.display();
             }
             else {
-                System.out.println("No bookings for this tour!");
+                System.out.println("\tNo bookings for this tour!");
             }
         }
 

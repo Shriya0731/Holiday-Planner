@@ -1,3 +1,5 @@
+package Holiday_Planner;
+
 import java.util.Scanner;
 class Customer{
     Scanner sc = new Scanner(System.in);
@@ -11,3 +13,4 @@ class Customer{
     }
 
 }
+

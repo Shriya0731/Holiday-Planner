@@ -1,3 +1,5 @@
+package Holiday_Planner;
+
 public class Category{
     Tour_Package new_package;
     Category low , high;
@@ -7,3 +9,6 @@ public class Category{
         low = high = null;
     }
 }
+
+
+
