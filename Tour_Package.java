@@ -46,7 +46,7 @@ class Tour_Package{
             System.out.print("\tEnter number of seats to book:");
             int seats=sc.nextInt();
             if (booked_seats + seats <= capacity) {
-                System.out.print("\tTo confirm booking press 1");
+                System.out.print("\tTo confirm booking press 1:  ");
                 int yes = sc.nextInt();
                 if (yes==1) {
                     bookthistour.insert(customer_name, seats);

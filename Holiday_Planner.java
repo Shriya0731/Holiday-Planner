@@ -11,15 +11,17 @@ public class Holiday_Planner {
         Scanner sc = new Scanner (System.in);
         int choice,ch,exit=0;
         Travel_Company Marvel = new Travel_Company();
-        String destination1[] = {"Cherrapunjee","Guwahati","Kaziranga","Mawlynnong","Shillong"};
-        Tour_Package T1 = new Tour_Package("Assam Meghalaya", destination1, 55000, 8, 40);
+        String destination2[] = {"Shimla","Chandhigarh","Manali"};
+        Tour_Package T1 = new Tour_Package("Shimla Manali", destination2, 30000, 6, 45);
         Marvel.create_price(T1);
         Marvel.create_days(T1);
         
-        String destination2[] = {"Shimla","Chandhigarh","Manali"};
-        Tour_Package T2 = new Tour_Package("Shimla Manali", destination2, 30000, 6, 45);
+        String destination1[] = {"Cherrapunjee","Guwahati","Kaziranga","Mawlynnong","Shillong"};
+        Tour_Package T2 = new Tour_Package("Assam Meghalaya", destination1, 55000, 8, 40);
         Marvel.create_price(T2);
         Marvel.create_days(T2);
+        
+      
         
         String destination3[] = {"Calangute"};
         Tour_Package T3 = new Tour_Package("Goa Kyriad Prestige Calangute", destination3, 19500, 4, 40);
@@ -41,7 +43,7 @@ public class Holiday_Planner {
             switch(ch){
                 case 1:
                     do {
-                        System.out.println("\t------------------------MENU---------------------------------\n\t1)Add new tour Package\n\t2)Display bookings" +
+                        System.out.println("\t----------------------------------MENU-----------------------------------\n\t1)Add new tour Package\n\t2)Display bookings" +
                                 "\n\t3)Delete any tour package\n\t4)Exit");
                         System.out.print("\tEnter your choice:");
                         choice=sc.nextInt();
@@ -84,9 +86,10 @@ public class Holiday_Planner {
                                 int delete_days = sc.nextInt();
                                 System.out.print("\tEnter the price:  ");
                                 int delete_price = sc.nextInt();
+                                // root = price and root1 = days
                                 Marvel.delete(Marvel.root1,nm,delete_days,delete_price);
                                 Marvel.delete(Marvel.root,nm,delete_days,delete_price);
-                                System.out.println("\tTour Package Deleted Successfully!!!  ");
+                             
                                 break;
                         }
                     }while(choice!=4);
