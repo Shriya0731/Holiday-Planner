@@ -229,7 +229,7 @@ public class Travel_Company{
             while(ptr!= null) {
                 //System.out.println("ptr name :"+ptr.Package_name);
                 if (is_tour(ptr,pkgname )) {
-                    namefound =1;
+                    namefound = 1;
                     //System.out.println("found");
                     return ptr;
 
@@ -300,6 +300,7 @@ public class Travel_Company{
     void delete(Category rt,String delete_pkg , int del_days,int del_price) {
         Category ptr1;
         Category found;
+        // root = price , root1 = days
         if(rt==root1){
         	display = 0;
             found = searchByDays(del_days);
@@ -321,7 +322,11 @@ public class Travel_Company{
                     prev = temp;
                     temp = temp.same;
                 }
-                prev.same = temp.same;
+                if(temp.same!= null) {
+                	  prev.same = temp.same;
+                }
+                
+              
              
             }
             // if full category is to be deleted
@@ -341,6 +346,7 @@ public class Travel_Company{
                         parent.high=null;
                      
                     }
+                    System.out.println("\tTour Package deleted!");
                 }
                 else if(hasonlyleftchild(ptr1)) {
                 	
@@ -363,6 +369,7 @@ public class Travel_Company{
                         parent.high=ptr1.low;
                    
                     }
+                    System.out.println("\tTour Package deleted!");
                 }
                 else if(hasonlyrightchild(ptr1)) {
                     if (ptr1 == rt) {
@@ -376,6 +383,7 @@ public class Travel_Company{
                         parent.high=ptr1.high;
                     
                     }
+                    System.out.println("\tTour Package deleted!");
                 }
                 else {
                     i=0;
@@ -391,7 +399,7 @@ public class Travel_Company{
                     delete(rt,pkgname,succ_days,succ_price);
                     full = 0;
                     ptr1.new_package= copy.new_package;
-              
+                    System.out.println("\tTour Package deleted!");
                 }
             }
             // if the first package in the found category is not desired package
